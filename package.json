@@ -1,0 +1,23 @@
+{
+  "name": "readMe-Maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobCounts/readMe-Maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobCounts/readMe-Maker/issues"
+  },
+  "homepage": "https://github.com/JacobCounts/readMe-Maker#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
