@@ -1,66 +1,43 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
-
-inquirer 
-.prompt([
-    {
-        type: 'input',
-        message: "What is the title of your project?",
-        name: 'title',
-    },
-    {
-        type: 'input',
-        message: "Provide a brief description of your project.",
-        name: 'description',
-    },
-    {
-        type: 'input',
-        message: "How do you install your application?",
-        name: 'installation',
-    },
-    {
-        type: 'input',
-        message: "Usage?",
-        name: 'usage',
-    },
-    {
-        type: 'input',
-        message: "Contributing",
-        name: 'contributing',
-    },
-    {
-        type: 'input',
-        message: "Tests",
-        name: 'tests',
-    },
-    {
-        type: 'input',
-        message: "Table of contents",
-        name: 'contents',
-    },
-    {
-        type: 'input',
-        message: "License",
-        name: 'license',
-    },
-    {
-        type: 'input',
-        message: "What is your email?",
-        name: 'title',
-    }
+const questions = require("./questions");
 
 
+inquirer.prompt(questions).then((response) => {
+    console.log(response);
+    
+    const tempelate = `
+    
+# ${response.title}
+    
+## Description: ${response.description}
+
+# Table of Contents
+* [description](#description)
+* [installation](#installation)
+* [usage](#usage)
+* [contributing](#contributing)
+* [tests](#tests)
+
+## Installation: ${response.install}
+
+## Usage: ${response.usage}
 
 
+## License: ${response.license}[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
+## Contributing: ${response.contributing}
+
+## Testing: ${response.testing}
+
+## Questions? I can be contacted with the links below:   
+* email: ${response.email}
+* gitHub: [gitHub](https://github.com/${response.gitHub})
+
+`
+        fs.writeFile("README.md", tempelate, (err) => err
+        ? console.error(err) : console.log ("Success!"))
+})
 
 
-
-])
-.then(function(user) {
-    console.log(user);
-    fs.appendFile("log.txt", JSON.stringify(user, null, 2), function(err){
-        console.log("Wrote to the file");
-    });
-});
