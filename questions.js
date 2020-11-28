@@ -20,9 +20,10 @@ const questions = [
         name: 'usage',
     },
     { 
-        type: 'input',
-        message: "Which license do you use?",
+        type: 'list',
+        message: "Select a license",
         name: 'license',
+        choices: ['MIT', 'Mozilla'],
     },
     {
         type: 'input',
