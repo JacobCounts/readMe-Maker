@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require("fs");
 const questions = require("./questions");
 const path = require("path");
-
+// creates license based on selection
 function licenseBadge(license) {
 if (license == "None") {
     return ""
