@@ -13,6 +13,7 @@ const questions = [
         type: 'input',
         message: "How do you install your application?",
         name: 'install',
+        default: "npm install"
     },
     {
         type: 'input',
@@ -23,7 +24,10 @@ const questions = [
         type: 'list',
         message: "Select a license",
         name: 'license',
-        choices: ['MIT', 'Mozilla'],
+        choices: [{name:'MIT',value:"MIT"}, 
+        {name:'Mozilla', value: "Mozilla"}, 
+        {name:'GPL 3.0',value: "GPL_3.0"}, 
+        {name: "None", value: "None"}],
     },
     {
         type: 'input',
@@ -34,6 +38,7 @@ const questions = [
         type: 'input',
         message: "Testing instructions:",
         name: 'testing',
+        default: "npm test"
     },
     {
         type: 'input',
